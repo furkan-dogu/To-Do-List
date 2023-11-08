@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(https://cdn.pixabay.com/photo/2016/04/18/22/05/seashells-1337565_640.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Dancing Script', cursive;
 }
 
 .container {
@@ -16,13 +24,13 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(84, 125, 125);
+    background-color: #8EC5FC;
     width: 65%;
     margin: auto;
     height: 80vh;
     border-radius: 20px;
     overflow: auto;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
 }
 
 .container::-webkit-scrollbar {
@@ -34,13 +42,17 @@ body {
     text-align: center;
     position: sticky;
     top: 0;
+    background-color: #8EC5FC;
+    z-index: 1;
 }
 
 h2 {
     color: brown;
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 3rem;
     margin: 1rem 0;
+    box-shadow: 0 0 5px;
+    background-color: #8EC5FC;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .add-section {
@@ -61,6 +73,7 @@ h2 {
     flex: 1;
     margin-right: .5rem;
     border-radius: 5px;
+    box-shadow: 0 0 5px;
 }
 
 .add-btn {
@@ -69,6 +82,7 @@ h2 {
     cursor: pointer;
     border-radius: 5px;
     border: none;
+    box-shadow: 0 0 5px;
 }
 
 .add-btn:active {
@@ -87,6 +101,7 @@ h2 {
     border-radius: 5px;
     margin: 5px 0;
     color: white;
+    font-weight: bold;
 }
 
 .list li i {
@@ -121,9 +136,112 @@ span {
     border: none;
     font-size: 1rem;
     cursor: pointer;
+    background-color: red;
+    color: white;
+    box-shadow: 0px 0px 5px black;
 }
 
 .reset:active {
     transform: scale(95%);
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 80%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .add-section {
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .input {
+        flex: 0;
+        width: 100%;
+        font-size: .8rem;
+        padding: .8rem;
+        margin-right: 0;
+    }
+
+    .add-btn {
+        width: 3.5rem;
+        padding: .5rem;
+    }
+
+    .add-btn i {
+        font-size: .8rem;
+    }
+
+    span {
+        font-size: 1rem;
+        color: white;
+        font-weight: bold;
+    }
+
+    .list li {
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: none;
+    }
+
+    .list li i {
+        font-size: .6rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .reset {
+        font-size: .8rem;
+        width: 150px;
+        padding: .3rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    h2 {
+        font-size: 1.1rem;
+        margin: .5rem 0;
+    }
+
+    .add-section {
+        gap: .3rem;
+    }
+
+    .input {
+        width: 100%;
+        font-size: .6rem;
+        padding: .2rem;
+        flex: 1;
+    }
+
+    .add-btn {
+        width: 2.5rem;
+        padding: .2rem;
+    }
+
+    .add-btn i {
+        font-size: .8rem;
+    }
+
+    span {
+        font-size: .7rem;
+    }
+
+    .list li i {
+        font-size: .4rem;
+        width: .8rem;
+        height: .8rem;
+    }
+
+    .reset {
+        font-size: .6rem;
+        width: 100px;
+        padding: .2rem;
+    }
 }
 

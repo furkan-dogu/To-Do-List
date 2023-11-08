@@ -32,10 +32,10 @@ addBtn.addEventListener("click", () => {
 
     tik.addEventListener("click", () => {
       text.style.textDecoration = "line-through";
-      text.style.color = "red";
+      text.style.color = "black";
       reset.style.display = "block";
       reset.addEventListener("click", () => {
-        if ((text.style.color = "red")) {
+        if ((text.style.textDecoration = "line-through")) {
           li.remove();
           reset.style.display = "none";
         }
