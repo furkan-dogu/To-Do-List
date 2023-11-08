@@ -50,12 +50,12 @@ section {
     /* font-size: 1rem; */
 }
 
-.li-items {
+/* .li-item {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 span {
     font-size: 2rem;

@@ -1,49 +1,59 @@
 const input = document.querySelector(".input");
-const add = document.querySelector(".add-btn");
+const addBtn = document.querySelector(".add-btn");
 const list = document.querySelector(".list");
+const reset = document.querySelector(".reset");
 
-add.addEventListener("click", () => {
-  if (!input.value) {
-    alert("Please enter a value");
+addBtn.addEventListener("click", () => {
+  let mesaj = input.value;
+
+  if (!mesaj) {
+    alert("Please enter a text");
   } else {
-    let li = document.createElement("li");
-    // console.log("lı olustu");
+    const li = document.createElement("li");
     list.appendChild(li);
+    li.setAttribute("class", "li-item");
 
-    li.setAttribute("class", "li-items");
+    li.style.listStyleType = "none";
 
-    let lineDraw = document.createElement("i");
-    li.appendChild(lineDraw);
-    lineDraw.setAttribute("class", "fa-solid fa-check");
+    const tik = document.createElement("i");
+    li.appendChild(tik);
+    tik.setAttribute("class", "fa-solid fa-check");
 
-    let pEl = document.createElement("span");
-    li.appendChild(pEl);
-    pEl.textContent = input.value;
+    const text = document.createElement("span");
+    li.appendChild(text);
+    text.textContent = mesaj;
 
-    let deleteButton = document.createElement("i");
-    li.appendChild(deleteButton);
-    deleteButton.setAttribute("class", "fa fa-trash");
+    const delBtn = document.createElement("i");
+    li.appendChild(delBtn);
+    delBtn.setAttribute("class", "fa fa-trash");
 
     input.value = "";
+    input.focus();
 
-    let reset = document.querySelector(".reset");
-
-    lineDraw.addEventListener("click", () => {
-      pEl.style.textDecoration = "line-through";
+    tik.addEventListener("click", () => {
+      text.style.textDecoration = "line-through";
+      text.style.color = "red";
       reset.style.display = "block";
       reset.addEventListener("click", () => {
-        if (pEl.style.textDecoration == "line-through") {
+        if ((text.style.color = "red")) {
           li.remove();
           reset.style.display = "none";
         }
       });
     });
+
+    delBtn.addEventListener("click", () => {
+      list.removeChild(li);
+    });
   }
 });
 
-list.addEventListener("click", (e) => {
-  if (e.target.className === "fa fa-trash") {
-    let listItems = e.target.parentElement;
-    list.removeChild(listItems);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addBtn.click();
   }
+});
+
+window.addEventListener("load", () => {
+  input.focus();
 });
