@@ -31,7 +31,8 @@ addBtn.addEventListener("click", () => {
     input.focus();
 
     tik.addEventListener("click", () => {
-      text.style.textDecoration = "line-through";
+      text.classList.toggle("cizgi");
+      // text.style.textDecoration = "line-through";
       text.style.color = "black";
       reset.style.display = "block";
       reset.addEventListener("click", () => {

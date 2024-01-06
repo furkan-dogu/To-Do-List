@@ -128,6 +128,10 @@ span {
     padding: 0 .5rem;
 }
 
+.li-item .cizgi {
+    text-decoration: line-through;
+}
+
 .reset{
     width: 180px;
     display: none;
@@ -200,6 +204,8 @@ span {
         width: 150px;
         padding: .3rem;
     }
+
+    
 }
 
 @media screen and (max-width: 300px) {
